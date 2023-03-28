@@ -3,4 +3,13 @@ class Blog < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 
+
+	def status_change_in_blog
+		if self.draft?
+	      self.published!
+	    else
+	      self.draft!
+	    end
+	end
+
 end
