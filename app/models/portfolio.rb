@@ -1,5 +1,7 @@
 class Portfolio < ApplicationRecord
 	include Placeholder
+
+	has_many :technologies
 	validates_presence_of :title, :subtitle, :body
 
 	scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
