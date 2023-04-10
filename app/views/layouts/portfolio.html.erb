@@ -4,7 +4,9 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,9 +17,7 @@
     <%= render 'shared/nav', location: 'top' %>
 
     <%= login_helper %>
-
     <%= yield %>
-
-    <%= source_helper %>
+    <%= source_helper(layout_name: "application") %>
   </body>
 </html>
